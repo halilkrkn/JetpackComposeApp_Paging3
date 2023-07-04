@@ -30,7 +30,9 @@ object AppModule {
             context,
             BeerDatabase::class.java,
             "beer_database"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
 
     @Provides
     @Singleton
